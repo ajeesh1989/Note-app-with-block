@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:get/get.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -8,13 +8,22 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey.shade900,
-        title: Text(
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            )),
+        backgroundColor: Colors.grey.shade100,
+        title: const Text(
           'About - S C R I B B L E S',
+          style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
         bottom: const PreferredSize(
-            preferredSize: Size.fromHeight(20), child: Text('')),
+            preferredSize: Size.fromHeight(15), child: Text('')),
       ),
       body: Padding(
         padding: const EdgeInsets.all(30.0),

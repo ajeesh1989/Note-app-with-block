@@ -12,18 +12,6 @@ class NoteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      // onTap: () {
-      //   Navigator.push(
-      //     context,
-      //     MaterialPageRoute(
-      //       builder: (context) {
-      //         return EditNoteView(
-      //           note: note,
-      //         );
-      //       },
-      //     ),
-      //   );
-      // },
       child: Container(
         decoration: BoxDecoration(
           color: Color(note.color),
@@ -94,17 +82,17 @@ class NoteItem extends StatelessWidget {
                                     note.delete();
                                     BlocProvider.of<NotesCubit>(context)
                                         .fetchAllNotes();
-                                    Get.snackbar(
-                                      'Done',
-                                      'Note deleted successfully',
-                                      snackPosition: SnackPosition.BOTTOM,
-                                      colorText: Colors.white,
-                                      backgroundColor: Colors.grey.shade900,
-                                      icon: const Icon(
-                                        Icons.delete_rounded,
-                                        color: Colors.white,
-                                      ),
-                                    );
+                                    // Get.snackbar(
+                                    //   'Done',
+                                    //   'Note deleted successfully',
+                                    //   snackPosition: SnackPosition.BOTTOM,
+                                    //   colorText: Colors.white,
+                                    //   backgroundColor: Colors.grey.shade900,
+                                    //   icon: const Icon(
+                                    //     Icons.delete_rounded,
+                                    //     color: Colors.white,
+                                    //   ),
+                                    // );
                                   },
                                   child: const Text(
                                     "Yes",

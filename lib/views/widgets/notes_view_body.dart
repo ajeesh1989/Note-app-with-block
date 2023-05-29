@@ -31,12 +31,15 @@ class _NotesViewBodyState extends State<NotesViewBody> {
           const SizedBox(
             height: 50,
           ),
-          CustomAppBar(
-            title: 'Scribbles',
-            icon: Icons.note_alt,
-            onPressed: () {
-              Get.to(const SettingsPage());
-            },
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: CustomAppBar(
+              title: 'Scribbles',
+              icon: Icons.note_alt_outlined,
+              onPressed: () {
+                Get.to(const SettingsPage());
+              },
+            ),
           ),
           const Expanded(
             child: NotesListView(),
