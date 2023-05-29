@@ -5,7 +5,6 @@ import 'package:notes_app/views/about.dart';
 
 import '../../cubits/notes_cubit/notes_cubit.dart';
 import 'custom_app_bar.dart';
-import 'note_item.dart';
 import 'notes_list_view.dart';
 
 class NotesViewBody extends StatefulWidget {

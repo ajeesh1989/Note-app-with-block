@@ -3,7 +3,7 @@ import 'package:flutter/animation.dart';
 const kPrimaryColor = Color(0xff62FCD7);
 const kNotesBox = 'notes_box';
 List<Color> kColors = const [
-  Color.fromRGBO(215, 134, 128, 1),
+  Color.fromRGBO(255, 161, 154, 1),
   Color.fromARGB(255, 234, 232, 225),
   Color(0xffD9E76C),
   Color.fromARGB(255, 130, 176, 195),
