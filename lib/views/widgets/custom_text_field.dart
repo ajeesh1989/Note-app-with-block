@@ -2,22 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
+  CustomTextField(
       {super.key,
       required this.hint,
       this.maxLines = 1,
       this.onSaved,
-      this.onChanged});
+      this.onChanged,
+      required this.textController});
 
   final String hint;
   final int maxLines;
+  TextEditingController textController = TextEditingController();
 
   final void Function(String?)? onSaved;
 
   final Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
+    textController.value = textController.value;
     return TextFormField(
+      controller: textController,
       onChanged: onChanged,
       onSaved: onSaved,
       validator: (value) {
@@ -40,11 +44,12 @@ class CustomTextField extends StatelessWidget {
 
   OutlineInputBorder buildBorder([color]) {
     return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          8,
-        ),
-        borderSide: BorderSide(
-          color: color ?? Colors.white,
-        ));
+      borderRadius: BorderRadius.circular(
+        8,
+      ),
+      borderSide: BorderSide(
+        color: color ?? Colors.grey.shade300,
+      ),
+    );
   }
 }

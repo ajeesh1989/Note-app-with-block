@@ -4,20 +4,35 @@ import 'package:notes_app/constants.dart';
 import 'package:notes_app/cubits/add_note_cubit/add_note_cubit.dart';
 
 class ColorItem extends StatelessWidget {
-  const ColorItem({super.key, required this.isActive, required this.color});
+  const ColorItem({Key? key, required this.isActive, required this.color})
+      : super(key: key);
 
   final bool isActive;
-
   final Color color;
+
   @override
   Widget build(BuildContext context) {
     return isActive
-        ? CircleAvatar(
-            radius: 38,
-            backgroundColor: Colors.white,
+        ? Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: color,
+                width: 1.5,
+              ),
+            ),
             child: CircleAvatar(
-              radius: 34,
-              backgroundColor: color,
+              radius: 38,
+              backgroundColor: Colors.white,
+              child: CircleAvatar(
+                radius: 34,
+                backgroundColor: color,
+                // child: const Icon(
+                //   Icons.check,
+                //   size: 21,
+                //   color: Colors.black26,
+                // ),
+              ),
             ),
           )
         : CircleAvatar(

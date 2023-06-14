@@ -25,6 +25,8 @@ class _AddNoteFormState extends State<AddNoteForm> {
   String? title, subTitle;
   @override
   Widget build(BuildContext context) {
+    TextEditingController titleController = TextEditingController();
+    TextEditingController contentController = TextEditingController();
     return Form(
       key: formKey,
       autovalidateMode: autovalidateMode,
@@ -34,6 +36,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 32,
           ),
           CustomTextField(
+            textController: titleController,
             onSaved: (value) {
               title = value;
             },
@@ -43,6 +46,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             height: 16,
           ),
           CustomTextField(
+            textController: contentController,
             onSaved: (value) {
               subTitle = value;
             },

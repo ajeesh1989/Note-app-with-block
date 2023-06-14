@@ -19,50 +19,59 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
   String? title, content;
   @override
   Widget build(BuildContext context) {
+    TextEditingController titleController =
+        TextEditingController(text: widget.note.title);
+    TextEditingController contentController =
+        TextEditingController(text: widget.note.subTitle);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          CustomAppBar(
-            onPressed: () {
-              widget.note.title = title ?? widget.note.title;
-              widget.note.subTitle = content ?? widget.note.subTitle;
-              widget.note.save();
-              BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-              Navigator.pop(context);
-            },
-            title: 'Edit Note',
-            icon: Icons.check,
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          CustomTextField(
-            onChanged: (value) {
-              title = value;
-            },
-            hint: widget.note.title,
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          CustomTextField(
-            onChanged: (value) {
-              content = value;
-            },
-            hint: widget.note.subTitle,
-            maxLines: 5,
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          EditNoteColorsList(
-            note: widget.note,
-          ),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 50,
+            ),
+            CustomAppBar(
+              onPressed: () {
+                widget.note.title = title ?? widget.note.title;
+                widget.note.subTitle = content ?? widget.note.subTitle;
+                widget.note.save();
+                BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                Navigator.pop(context);
+              },
+              title: 'Edit Note',
+              icon: Icons.check,
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            CustomTextField(
+              textController: titleController,
+              onChanged: (value) {
+                title = value;
+              },
+              hint: widget.note.title,
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            CustomTextField(
+              textController: contentController,
+              onChanged: (value) {
+                content = value;
+              },
+              hint: widget.note.subTitle,
+              maxLines: 5,
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            EditNoteColorsList(
+              note: widget.note,
+            ),
+          ],
+        ),
       ),
     );
   }

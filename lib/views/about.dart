@@ -34,28 +34,28 @@ class SettingsPage extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 'Note-taking is the process of capturing information from a source or event. This usually takes the form of recording, writing, jotting, paraphrasing, sketching, labelling, outlining, and annotating. Our app enable users to type, write on their devices just as they would on paper. Many applications have their own unique features, storage, organization, and sharing capabilities, and it’s up to the user to identify which note-taking application will work best for their needs.',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 15,
                 ),
               ),
               const SizedBox(
                 height: 280,
               ),
               const Text(
-                'version 0.0.1',
+                'version 1.0.1',
                 style: TextStyle(
                   color: Colors.black54,
-                  fontSize: 13,
+                  fontSize: 12,
                 ),
               ),
               const SizedBox(
-                height: 3,
+                height: 2,
               ),
               RichText(
                 text: const TextSpan(
-                  text: 'Developer name   ',
+                  text: 'Developer  ',
                   style: TextStyle(
                     color: Colors.black87,
-                    fontSize: 13,
+                    fontSize: 12,
                     fontWeight: FontWeight.w300,
                   ),
                   children: <TextSpan>[
